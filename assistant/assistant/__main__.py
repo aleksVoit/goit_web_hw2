@@ -1,4 +1,4 @@
-from assistant.CLIBot import CLIBot
+from CLIBot import CLIBot
 
 
 def helper():

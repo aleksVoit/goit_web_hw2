@@ -1,5 +1,5 @@
-from assistant.AddressBook import *
-from assistant.BotInterface import ABCInterface
+from AddressBook import *
+from BotInterface import ABCInterface
 
 
 class CLIBot(ABCInterface):

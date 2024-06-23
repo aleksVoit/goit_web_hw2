@@ -8,7 +8,7 @@ WORKDIR /assistant
 
 COPY assistant /assistant
 
-RUN pip install -r /requirements.txt
+RUN pip install -r /assistant/requirements.txt
 
 RUN pip install .
 
