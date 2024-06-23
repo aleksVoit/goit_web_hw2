@@ -10,6 +10,6 @@ setup(name='docker_test',
       packages=find_namespace_packages(),
       install_requires=['prompt_toolkit'],
       entry_points={'console_scripts': [
-            'helper_run = docker_test.__main__:main'
+            'helper_run = __main__:main'
       ]}
       )
