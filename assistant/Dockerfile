@@ -4,11 +4,11 @@ RUN apt update
 RUN apt install -y python3
 RUN apt install -y python3-pip
 
-WORKDIR /docker_test
+WORKDIR /assistant
 
-COPY docker_test /docker_test
+COPY assistant /assistant
 
-RUN pip install -r /docker_test/requirements.txt
+RUN pip install -r /requirements.txt
 
 RUN pip install .
 
