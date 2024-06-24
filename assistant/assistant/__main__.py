@@ -1,4 +1,4 @@
-from CLIBot import CLIBot
+from assistant.CLIBot import CLIBot
 
 
 def helper():
@@ -11,7 +11,7 @@ def main():
     bot.book.load("auto_save")
     commands = {'Add': bot.add, 'Search': bot.search,
                 'Edit': bot.edit, 'Load': bot.load, 'Remove': bot.remove, 'Save': bot.save,
-                'Congratulate': bot.congratulate, 'View': bot.view, 'Exit': bot.exit}
+                'Congratulate': bot.congratulate, 'View': bot.view, 'Close': bot.exit}
 
     while True:
         action = input('Type help for list of commands or enter your command\n').strip().lower()
