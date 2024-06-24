@@ -12,4 +12,4 @@ RUN pip install -r /assistant/requirements.txt
 
 RUN pip install .
 
-CMD ["python3", "__main__.py"]
+CMD ["python3", "assistant/__main__.py"]

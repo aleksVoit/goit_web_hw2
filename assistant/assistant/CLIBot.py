@@ -1,5 +1,5 @@
-from AddressBook import *
-from BotInterface import ABCInterface
+from assistant.AddressBook import *
+from assistant.BotInterface import ABCInterface
 
 
 class CLIBot(ABCInterface):
@@ -51,13 +51,11 @@ class CLIBot(ABCInterface):
 
     @input_error
     def save(self):
-        file_name = input("File name: ")
-        return self.book.save(file_name)
+        return self.book.save('auto_save')
 
     @input_error
     def load(self):
-        file_name = input("File name: ")
-        return self.book.load(file_name)
+        return self.book.load('auto_save')
     
     @input_error
     def congratulate(self):
@@ -69,5 +67,6 @@ class CLIBot(ABCInterface):
 
     
     @input_error
-    def exit(self):
+    def exit(self):  # exit function
+        self.book.save('auto_save')
         exit()

@@ -1,7 +1,7 @@
-from datetime import datetime as dt, timedelta
+from datetime import timedelta, datetime as dt
 from collections import UserList
 import pickle
-from info import *
+from assistant.info import *
 import os
 
 
@@ -57,9 +57,9 @@ class AddressBook(UserList):
         return self.data[index]
 
     def log(self, action):
-        current_time = dt.strftime(dt.now(), '%H:%M:%S')
+        current_time = dt.strftime(dt.now(), '%Y-%m-%d %H:%M:%S')
         message = f'[{current_time}] {action}'
-        with open('logs.txt', 'a') as file:
+        with open('assistant/data/logs.txt', 'a') as file:
             file.write(f'{message}\n')
 
     def add(self, record):
@@ -73,15 +73,15 @@ class AddressBook(UserList):
         self.log(f"Contact {record.name} has been added.")
 
     def save(self, file_name):
-        with open(file_name + '.bin', 'wb') as file:
+        with open('assistant/data/' + file_name + '.bin', 'wb') as file:
             pickle.dump(self.data, file)
         self.log("Addressbook has been saved!")
 
     def load(self, file_name):
         try:
-            emptyness = os.stat('assistant/' + file_name + '.bin')  # 'docker_test/' +
+            emptyness = os.stat('assistant/data/' + file_name + '.bin')  # 'assistant/' +
             if emptyness.st_size != 0:
-                with open('assistant/' + file_name + '.bin', 'rb') as file:  # 'docker_test/' +
+                with open('assistant/data/' + file_name + '.bin', 'rb') as file:  # 'assistant/' +
                     self.data = pickle.load(file)
                 self.log("Addressbook has been loaded!")
             else:

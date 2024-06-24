@@ -10,6 +10,6 @@ setup(name='assistant',
       packages=find_namespace_packages(),
       install_requires=['prompt_toolkit'],
       entry_points={'console_scripts': [
-            'helper_run = assistant.__main__:main'
+            'assistant = assistant.__main__:main'
       ]}
       )
